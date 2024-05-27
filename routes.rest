@@ -1,0 +1,95 @@
+// LOCALHOST
+### Get all contacts
+GET http://localhost:8080/contacts
+
+
+### Get contact by id
+GET http://localhost:8080/contacts/663ac24aa07695e6c10aa437
+
+
+### Create contact
+POST http://localhost:8080/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Phoenix",
+    "lastName": "Davis",
+    "email": "PDavis@test.com",
+    "favoriteColor": "Pink",
+    "birthday": "05/12/2013"
+}
+
+### Create contact NULL
+POST http://localhost:8080/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "null",
+    "lastName": "null",
+    "email": "null",
+    "favoriteColor": "null",
+    "birthday": "null"
+}
+
+
+### PUT contact
+PUT http://localhost:8080/contacts/66404f3bb3e944e38b699604 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Jessica",
+    "lastName": "Travis",
+    "email": "JTravis@test.com",
+    "favoriteColor": "Blue",
+    "birthday": "05/12/2010"
+}
+### DELETE contact
+DELETE http://localhost:8080/contacts/66404f3bb3e944e38b699604 HTTP/1.1
+
+// Production
+### Get all contacts
+GET https://cse-341-3gsy.onrender.com/contacts
+
+
+### Get contact by id
+GET https://cse-341-3gsy.onrender.com/contacts/663ac24aa07695e6c10aa437
+
+
+### Create contact
+POST https://cse-341-3gsy.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Phoenix",
+    "lastName": "Davis",
+    "email": "PDavis@test.com",
+    "favoriteColor": "Pink",
+    "birthday": "05/12/2013"
+}
+
+### Create contact NULL
+POST https://cse-341-3gsy.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "null",
+    "lastName": "null",
+    "email": "null",
+    "favoriteColor": "null",
+    "birthday": "null"
+}
+
+
+### PUT contact
+PUT https://cse-341-3gsy.onrender.com/contacts/664048108238e90e430f7c96 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Jessica",
+    "lastName": "Travis",
+    "email": "JTravis@test.com",
+    "favoriteColor": "Blue",
+    "birthday": "05/12/2010"
+}
+### DELETE contact
+DELETE https://cse-341-3gsy.onrender.com/contacts/66404f719716ae1b0c007fa9 HTTP/1.1
