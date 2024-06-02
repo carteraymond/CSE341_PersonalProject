@@ -7,7 +7,7 @@ const doc = {
   },
   host: 'cse341-personalproject-fcdb.onrender.com',
   basePath: "/",
-  schemes: ["http"]
+  schemes: ["https"]
 };
 
 const outputFile = './swagger.json';
