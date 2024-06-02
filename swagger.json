@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/employees/": {
+    "/employees": {
       "get": {
         "description": "",
         "produces": [
@@ -73,7 +73,7 @@
         }
       }
     },
-    "/employees/{id}": {
+    "/employees{id}": {
       "get": {
         "description": "",
         "produces": [
