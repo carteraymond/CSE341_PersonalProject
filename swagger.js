@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Description'
   },
-  host: 'localhost:8080'
+  host: 'cse341-personalproject-fcdb.onrender.com'
 };
 
 const outputFile = './swagger.json';
