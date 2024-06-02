@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
-const cors = require('cors');
+// const cors = require('cors');
 
 const port = process.env.PORT || 8080;
 const app = express();
