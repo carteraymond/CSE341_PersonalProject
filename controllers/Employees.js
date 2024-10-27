@@ -11,6 +11,9 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
+  if (!userId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid id to find employee.');
+  }
   const result = await mongodb
     .getDb()
     .db('Personal')
@@ -23,6 +26,7 @@ const getSingle = async (req, res, next) => {
 };
 
 const createEmployee = async (req, res) => {
+  try {
   const Employee = {
     FirstName: req.body.FirstName,
     LastName: req.body.LastName,
@@ -38,10 +42,17 @@ const createEmployee = async (req, res) => {
   } else {
     res.status(500).json(response.error || 'Employee creation was unsuccessful');
   }
+}
+catch (err){
+res.status(500).json(err);
+}
 };
 
 const updateEmployee = async (req, res) => {
   const userId = new ObjectId(req.params.id);
+  if (!userId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid id to find employee.');
+  }
   const Employee = {
     FirstName: req.body.FirstName,
     LastName: req.body.LastName,
@@ -66,6 +77,9 @@ const updateEmployee = async (req, res) => {
 
 const deleteEmployee = async (req, res) => {
   const userId = new ObjectId(req.params.id);
+  if (!userId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid id to find employee.');
+  }
   const response = await mongodb.getDb().db('Personal').collection('Employees').deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
