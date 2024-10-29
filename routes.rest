@@ -4,8 +4,7 @@ GET http://localhost:8080/employees HTTP/1.1
 
 
 ### Get contact by id
-GET http://localhost:8080/employees/665c0bb355a35393f7ee0bd4
-
+GET http://localhost:8080/employees/6720385c1882941b451d4992
 
 ### Create contact
 POST http://localhost:8080/employees HTTP/1.1
@@ -15,9 +14,9 @@ Content-Type: application/json
     "FirstName": "Jacob",
     "LastName": "Tester",
     "DoB": "1/20/1998",
-    "HireDate": "5/26/2024",
-    "Salary": "35000",
-    "Job": "Tester",
+    "HireDate": "2/10/2020",
+    "Salary": "10000",
+    "Job": "123456",
     "Notes": "Test Employee" 
 }
 
@@ -50,7 +49,7 @@ content-type: application/json
     "Notes": "Test Employee"
 }
 ### DELETE contact
-DELETE http://localhost:8080/employees/67144fa76e96302929595208 HTTP/1.1
+DELETE http://localhost:8080/employees/67203c5c7d3a95607038165f HTTP/1.1
 
 //--------------------------------//
 

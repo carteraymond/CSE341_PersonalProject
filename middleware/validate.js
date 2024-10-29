@@ -4,16 +4,15 @@ const saveEmployee = (req, res, next) => {
   const validationRule = {
     FirstName: 'required|string',
     LastName: 'required|string',
-    DoB: 'required|string',
-    HireDate: 'required|string',
-    Salary: 'required|int',
+    DoB: 'required|date',
+    HireDate: 'required|date',
+    Salary: 'required|numeric',
     Job: 'required|string',
     Notes: 'string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
       res.status(412).send({
-        success: false,
         message: 'Validation failed',
         data: err
       });
