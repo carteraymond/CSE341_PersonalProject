@@ -87,17 +87,17 @@ Content-Type: application/json
 
 
 ### PUT contact
-PUT https://cse341-personalproject-fcdb.onrender.com/employees/665c0bb355a35393f7ee0bd4 HTTP/1.1
+PUT https://cse341-personalproject-fcdb.onrender.com/employees/671451b3f298e28d62f8baa2 HTTP/1.1
 content-type: application/json
 
 {
     "FirstName": "Jacob",
     "LastName": "Tester",
-    "DoB": "1/20/1998",
+    "DoB": "1/20dfdf",
     "HireDate": "5/26/2024",
     "Salary": "35000",
     "Job": "Tester",
     "Notes": "Test Employee"
 }
 ### DELETE contact
-DELETE https://cse341-personalproject-fcdb.onrender.com/employees/671450e3f298e28d62f8baa1 HTTP/1.1
+DELETE https://cse341-personalproject-fcdb.onrender.com/employees/665c0bb355a35393f7ee0bd4 HTTP/1.1
