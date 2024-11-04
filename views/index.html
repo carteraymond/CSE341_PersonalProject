@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login with GitHub</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Welcome to Our App</h2>
+    <p>Please log in to continue</p>
+    <button class="login-button" onclick="loginWithGitHub()">
+      Login with GitHub
+    </button>
+  </div>
+
+  <script>
+    function loginWithGitHub() {
+      const clientId = 'YOUR_CLIENT_ID'; // Replace with your GitHub OAuth client ID
+      const redirectUri = 'YOUR_REDIRECT_URI'; // Replace with your redirect URI
+      const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=read:user`;
+
+      window.location.href = githubAuthUrl;
+    }
+  </script>
+
+</body>
+</html>
