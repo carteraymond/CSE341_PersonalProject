@@ -1,12 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
-
-// const cors = require('cors');
+const path = require('path');
 
 const port = process.env.PORT || 8080;
 const app = express();
-
+app.use(express.static(path.join(__dirname, 'views')));
 app
   .use(bodyParser.json())
   .use((req, res, next) => {
@@ -17,6 +16,10 @@ app
     next();
   })
   .use('/', require('./routes'));
+
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  });
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
