@@ -55,7 +55,7 @@ DELETE http://localhost:8080/employees/67203c5c7d3a95607038165f HTTP/1.1
 
 // Production
 ### Get all employees
-GET https://cse341-personalproject-fcdb.onrender.com/employees
+GET https://cse341-personalproject-fcdb.onrender.com/stores/6726519eb3ac394f2ae686aa
 
 
 ### Get contact by id

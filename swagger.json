@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Description",
+    "description": "An API to manage employee and store records.",
     "version": "1.0.0"
   },
   "host": "cse341-personalproject-fcdb.onrender.com",
@@ -13,18 +13,16 @@
   "paths": {
     "/employees/": {
       "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "description": "Retrieve a list of all employees.",
+        "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "A JSON array of employee objects."
           }
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new employee record.",
         "parameters": [
           {
             "name": "body",
@@ -32,69 +30,61 @@
             "schema": {
               "type": "object",
               "properties": {
-                "FirstName": {
-                  "example": "any"
-                },
-                "LastName": {
-                  "example": "any"
-                },
-                "DoB": {
-                  "example": "any"
-                },
-                "HireDate": {
-                  "example": "any"
-                },
-                "Salary": {
-                  "example": "any"
-                },
-                "Job": {
-                  "example": "any"
-                },
-                "Notes": {
-                  "example": "any"
-                }
+                "FirstName": { "example": "John" },
+                "LastName": { "example": "Doe" },
+                "DoB": { "example": "1990-01-01" },
+                "HireDate": { "example": "2020-06-15" },
+                "Salary": { "example": 60000 },
+                "Job": { "example": "Software Engineer" },
+                "Notes": { "example": "Excellent performer" }
               }
             }
           }
         ],
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Employee successfully created."
+          },
+          "412": {
+            "description": "Precondition failed due to invalid input."
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Server error occurred while creating employee."
           }
         }
       }
     },
     "/employees/{id}": {
       "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "description": "Retrieve a specific employee's details by their ID.",
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The unique ID of the employee."
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Details of the specified employee."
+          },
+          "500": {
+            "description": "Server error occurred while retrieving employee details."
           }
         }
       },
       "put": {
-        "description": "",
+        "description": "Update an existing employee's record by their ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The unique ID of the employee to update."
           },
           {
             "name": "body",
@@ -102,66 +92,90 @@
             "schema": {
               "type": "object",
               "properties": {
-                "FirstName": {
-                  "example": "any"
-                },
-                "LastName": {
-                  "example": "any"
-                },
-                "DoB": {
-                  "example": "any"
-                },
-                "HireDate": {
-                  "example": "any"
-                },
-                "Salary": {
-                  "example": "any"
-                },
-                "Job": {
-                  "example": "any"
-                },
-                "Notes": {
-                  "example": "any"
-                }
+                "FirstName": { "example": "John" },
+                "LastName": { "example": "Doe" },
+                "DoB": { "example": "1990-01-01" },
+                "HireDate": { "example": "2020-06-15" },
+                "Salary": { "example": 65000 },
+                "Job": { "example": "Senior Software Engineer" },
+                "Notes": { "example": "Promoted recently" }
               }
             }
           }
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Employee record updated successfully."
+          },
+          "412": {
+            "description": "Precondition failed due to invalid input."
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Server error occurred while updating employee."
           }
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete an employee's record by their ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The unique ID of the employee to delete."
           }
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Employee record deleted successfully."
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Server error occurred while deleting employee."
+          }
+        }
+      }
+    },
+    "/stores/": {
+      "get": {
+        "description": "Retrieve a list of all stores.",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "A JSON array of store objects."
+          }
+        }
+      }
+    },
+    "/stores/{id}": {
+      "get": {
+        "description": "Retrieve details of a specific store by its ID.",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The unique ID of the store."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of the specified store."
+          },
+          "500": {
+            "description": "Server error occurred while retrieving store details."
           }
         }
       }
     },
     "/api-docs": {
       "get": {
-        "description": "",
+        "description": "Access the API documentation in Swagger format.",
         "responses": {
           "default": {
-            "description": ""
+            "description": "The Swagger API documentation."
           }
         }
       }

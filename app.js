@@ -10,7 +10,7 @@ app
   .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.header("Access-Control-Allow-Headers", "x-requested-with, content-type");
+    res.header("Access-Control-Allow-Headers", "x-requested-with, content-type, api_key");
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
     res.header("Access-Control-Allow-Credentials", "true");
     next();
