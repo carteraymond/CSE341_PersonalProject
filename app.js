@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const path = require('path');
-const passport = require('./helpers/passport');
-const session = require('express-session');
+// const passport = require('./helpers/passport');
+// const session = require('express-session');
 require('dotenv').config();
 const axios = require('axios'); 
 
