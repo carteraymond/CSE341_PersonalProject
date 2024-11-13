@@ -30,14 +30,14 @@ app
 
   app.get('/auth', (req, res) => {
     res.redirect(
-      `https://github.com/login/oauth/authorize?client_id=${process.env.Client_ID}`,
+      `https://github.com/login/oauth/authorize?client_id=${process.env.client_ID}`,
     );
   });
 
   app.get('/oauth-callback', ({ query: { code } }, res) => {
     const body = {
-      client_id: process.env.Client_ID,
-      client_secret: process.env.Client_Secret,
+      client_id: process.env.client_ID,
+      client_secret: process.env.client_Secret,
       code,
     };
     const opts = { headers: { accept: 'application/json' } };
