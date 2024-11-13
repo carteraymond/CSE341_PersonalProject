@@ -49,7 +49,8 @@ content-type: application/json
     "Notes": "Test Employee"
 }
 ### DELETE contact
-DELETE http://localhost:8080/employees/67203c5c7d3a95607038165f HTTP/1.1
+DELETE http://localhost:8080/employees/673174265904eafda6fd0433 HTTP/1.1
+# Cookie: connect.sid=password123
 
 //--------------------------------//
 
